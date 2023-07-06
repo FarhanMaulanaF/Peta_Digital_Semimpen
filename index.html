@@ -17,30 +17,51 @@
     <div id="map"></div>
 </body>
 <script>
+    // Initialize map
     var map = L.map('map');
-    // map.setView([51.505, -0.09], 13);
-    // map.setView([-7.4625,110.3732], 15);
     map.setView([-7.46418,110.36278], 17);
 
+    // Add OpenStreetMap layer
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
+    // Track user location
     navigator.geolocation.watchPosition(success, error);
 
+    // Initialize marker, circle, and zoomed
+    let marker, circle, zoomed;
+
     function success(pos) {
+        // Get current latitude and longitude
         const lat = pos.coords.latitude;
         const lng = pos.coords.longitude;
+
+        // Get current accuracy
         const accuracy = pos.coords.accuracy;
 
-        L.marker([lat, lng]).addTo(map)
-            .bindPopup('You are here')
-            .openPopup();
-        L.circle([lat, lng], {radius: accuracy}).addTo(map);
+        // Remove previous marker and circle
+        if (marker) {
+            map.removeLayer(marker);
+            map.removeLayer(circle);
+        }
+
+        // Add marker and circle
+        marker = L.marker([lat, lng]).addTo(map)
+        circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);
+
+        // Zoom map to fit marker and circle
+        if (!zoomed) {
+            zoomed = map.fitBounds(circle.getBounds());
+        }
+
+        // Set map view to current location
+        map.setView([lat, lng]);
     }
     
-    function error() {
+    function error(err) {
+        // Handle geolocation error
         if(err.code === 1) {
             alert("Please allow geolocation access!");
         } else {
