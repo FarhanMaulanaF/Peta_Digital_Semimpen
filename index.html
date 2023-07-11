@@ -2,17 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Map User Location</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" />
+    
+    <!-- Include leaflet CSS file -->
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" />
+    
+    <!-- Include leaflet JavaScript file -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
 </head>
+
 <body>
     <h1>Map User Location</h1>
     <div id="map"></div>
 </body>
+
 <script>
     // Initialize map
     var map = L.map('map');
@@ -56,7 +61,7 @@
         // Set map view to current location
         map.setView([lat, lng]);
     }
-    
+
     function error(err) {
         // Handle geolocation error
         if(err.code === 1) {
@@ -65,5 +70,6 @@
             alert("Cannot get current location!");
         }
     }
+
 </script>
 </html>
