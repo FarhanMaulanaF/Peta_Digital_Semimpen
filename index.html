@@ -41,13 +41,13 @@
     // Initialize marker, circle, and zoomed
     let marker, circle, zoomed;
 
-    function success(pos) {
+    function success(position) {
       // Get current latitude and longitude
-      const lat = pos.coords.latitude;
-      const lng = pos.coords.longitude;
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
 
       // Get current accuracy
-      const accuracy = pos.coords.accuracy;
+      const accuracy = position.coords.accuracy;
 
       // Remove previous marker and circle
       if (marker) {
@@ -56,11 +56,11 @@
       }
 
       // Add marker and circle
-      marker = L.marker([lat, lng])
+      marker = L.marker([latitude, longitude])
         .addTo(map)
-        .bindPopup("<b>Lokasi anda sekarang</b>")
-        .openPopup();
-      circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);
+        .bindPopup("<b>Lokasi anda sekarang</b>");
+
+      circle = L.circle([latitude, longitude], { radius: accuracy }).addTo(map);
 
       // Zoom map to fit marker and circle
       if (!zoomed) {
@@ -68,15 +68,15 @@
       }
 
       // Set map view to current location
-      map.setView([lat, lng]);
+      map.setView([latitude, longitude]);
     }
 
-    function error(err) {
+    function error(error) {
       // Handle geolocation error
-      if (err.code === 1) {
-        alert("Please allow geolocation access!");
+      if (error.code === 1) {
+        alert("Izinkan akses geolokasi!");
       } else {
-        alert("Cannot get current location!");
+        alert("Tidak bisa mendapatkan lokasi saat ini!");
       }
     }
   </script>
