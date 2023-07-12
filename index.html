@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Peta Dusun Semimpen</title>
-    
+
     <!-- Include leaflet CSS file -->
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" />
-    
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css"
+    />
+
     <!-- Include leaflet JavaScript file -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="map"></div>
-</body>
+  </body>
 
-<script>
+  <script>
     // Initialize map
-    var map = L.map('map');
-    map.setView([-7.46418,110.36278], 17);
+    var map = L.map("map");
+    map.setView([-7.46418, 110.36278], 17);
 
     // Add OpenStreetMap layer
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     }).addTo(map);
 
     // Track user location
@@ -35,40 +42,42 @@
     let marker, circle, zoomed;
 
     function success(pos) {
-        // Get current latitude and longitude
-        const lat = pos.coords.latitude;
-        const lng = pos.coords.longitude;
+      // Get current latitude and longitude
+      const lat = pos.coords.latitude;
+      const lng = pos.coords.longitude;
 
-        // Get current accuracy
-        const accuracy = pos.coords.accuracy;
+      // Get current accuracy
+      const accuracy = pos.coords.accuracy;
 
-        // Remove previous marker and circle
-        if (marker) {
-            map.removeLayer(marker);
-            map.removeLayer(circle);
-        }
+      // Remove previous marker and circle
+      if (marker) {
+        map.removeLayer(marker);
+        map.removeLayer(circle);
+      }
 
-        // Add marker and circle
-        marker = L.marker([lat, lng]).addTo(map).bindPopup("<b>Lokasi anda sekarang</b>").openPopup();
-        circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);
+      // Add marker and circle
+      marker = L.marker([lat, lng])
+        .addTo(map)
+        .bindPopup("<b>Lokasi anda sekarang</b>")
+        .openPopup();
+      circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);
 
-        // Zoom map to fit marker and circle
-        if (!zoomed) {
-            zoomed = map.fitBounds(circle.getBounds());
-        }
+      // Zoom map to fit marker and circle
+      if (!zoomed) {
+        zoomed = map.fitBounds(circle.getBounds());
+      }
 
-        // Set map view to current location
-        map.setView([lat, lng]);
+      // Set map view to current location
+      map.setView([lat, lng]);
     }
 
     function error(err) {
-        // Handle geolocation error
-        if(err.code === 1) {
-            alert("Please allow geolocation access!");
-        } else {
-            alert("Cannot get current location!");
-        }
+      // Handle geolocation error
+      if (err.code === 1) {
+        alert("Please allow geolocation access!");
+      } else {
+        alert("Cannot get current location!");
+      }
     }
-
-</script>
+  </script>
 </html>
