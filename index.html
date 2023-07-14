@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="asset/Icon.png">
+    <link rel="icon" href="asset/Icon.png" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
@@ -41,6 +41,12 @@
 
     // Initialize marker, circle, and zoomed
     let marker, circle, zoomed;
+
+    // Add marker to map
+    var posko = L.marker([-7.46431, 110.36294]).addTo(map).bindPopup("<b>Posko</b>"), 
+        kadus = L.marker([-7.46420, 110.36337]).addTo(map).bindPopup("<b>Kepala Dusun</b>");
+
+    var semimpen = L.layergroup([posko, kadus]);
 
     function success(position) {
       // Get current latitude and longitude
