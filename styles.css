@@ -6,3 +6,7 @@ html, body, #map {
     height: 100%;
     width: 100vw;
 }
+.gambar-pos-ronda {
+    width: 200px; /* Tentukan lebar gambar yang diinginkan */
+    height: auto; /* Biarkan tinggi otomatis untuk mempertahankan proporsi asli */
+  }
