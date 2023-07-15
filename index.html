@@ -46,12 +46,12 @@
     var posko = L.marker([-7.46431, 110.36294])
       .addTo(map)
       .bindPopup(
-        "<b class='text-xl'>Pos Keamanan</b> <br/> <img class='h-auto' src=''>"
+        "<p class='text-xl font-bold text-black'>Pos Keamanan</b> <br/> <img class='h-auto' src=''>"
       );
     var kadus = L.marker([-7.4642, 110.36337])
       .addTo(map)
       .bindPopup(
-        "<b class='text-xl'>Kepala Dusun</b> <br/> <img class='gambar-kepala-dusun' src=''>"
+        "<p class='text-xl font-bold text-black'>Kepala Dusun</b> <br/> <img class='gambar-kepala-dusun' src=''>"
       );
 
     var semimpen = L.layergroup([posko, kadus]);
@@ -73,7 +73,7 @@
       // Add marker and circle
       marker = L.marker([latitude, longitude])
         .addTo(map)
-        .bindPopup("<b class='text-xl'>Lokasi anda sekarang</b>");
+        .bindPopup("<p class='text-xl font-bold text-black'>Lokasi anda sekarang</p>");
 
       circle = L.circle([latitude, longitude], { radius: accuracy }).addTo(map);
 
