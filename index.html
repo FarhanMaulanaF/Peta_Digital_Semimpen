@@ -73,7 +73,9 @@
       // Add marker and circle
       marker = L.marker([latitude, longitude])
         .addTo(map)
-        .bindPopup("<p class='text-xl font-bold text-black'>Lokasi anda sekarang</p>");
+        .bindPopup(
+          "<p class='text-xl font-bold text-black'>Lokasi anda sekarang</p>"
+        );
 
       circle = L.circle([latitude, longitude], { radius: accuracy }).addTo(map);
 
