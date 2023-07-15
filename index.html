@@ -8,7 +8,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
     <title>Peta Dusun Semimpen</title>
-
+    <link rel="stylesheet" href="output.css" />
     <!-- Include leaflet CSS file -->
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <link
@@ -43,8 +43,16 @@
     let marker, circle, zoomed;
 
     // Add marker to map
-    var posko = L.marker([-7.46431, 110.36294]).addTo(map).bindPopup("<b>Posko</b> <br/> <img class='gambar-pos-ronda' src='asset/Contoh Pos Ronda.jpg'>"); 
-    var kadus = L.marker([-7.46420, 110.36337]).addTo(map).bindPopup("<b>Kepala Dusun</b> <br/> <img class='gambar-kepala-dusun' src=''>");
+    var posko = L.marker([-7.46431, 110.36294])
+      .addTo(map)
+      .bindPopup(
+        "<b class='text-xl'>Posko</b> <br/> <img class='h-auto' src=''>"
+      );
+    var kadus = L.marker([-7.4642, 110.36337])
+      .addTo(map)
+      .bindPopup(
+        "<b class='text-xl'>Kepala Dusun</b> <br/> <img class='gambar-kepala-dusun' src=''>"
+      );
 
     var semimpen = L.layergroup([posko, kadus]);
 
@@ -65,7 +73,7 @@
       // Add marker and circle
       marker = L.marker([latitude, longitude])
         .addTo(map)
-        .bindPopup("<b>Lokasi anda sekarang</b>");
+        .bindPopup("<b class='text-xl'>Lokasi anda sekarang</b>");
 
       circle = L.circle([latitude, longitude], { radius: accuracy }).addTo(map);
 
