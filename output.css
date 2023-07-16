@@ -600,6 +600,10 @@ video {
   height: 5rem;
 }
 
+.h-40 {
+  height: 10rem;
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -623,6 +627,10 @@ video {
 
 .w-80 {
   width: 20rem;
+}
+
+.w-96 {
+  width: 24rem;
 }
 
 .text-xl {
