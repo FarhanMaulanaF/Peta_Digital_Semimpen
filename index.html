@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,13 +8,23 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
+
     <title>Peta Dusun Semimpen</title>
+
+    <!-- Include CSS file -->
     <link rel="stylesheet" href="output.css" />
+
     <!-- Include leaflet CSS file -->
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css"
+    />
+
+    <!-- leaflet routing machine CSS  -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css"
     />
 
     <!-- Include leaflet JavaScript file -->
@@ -22,22 +33,19 @@
 
   <body>
     <div id="map"></div>
+
+    <!-- leaflet routing machine js -->
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
     <script>
-      // Initialize map
       var map = L.map("map");
       map.setView([-7.46418, 110.36278], 17);
-
-      // Add OpenStreetMap layer
-      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 19,
-        attribution:
-          '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-      }).addTo(map);
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',}).addTo(map);
 
       // Track user location
       navigator.geolocation.watchPosition(success, error);
 
-      // Initialize marker, circle, and zoomed
+      // Initialize variables
       let marker, circle, zoomed;
 
       // Add marker to map
@@ -51,7 +59,6 @@
         .bindPopup(
           "<p class='text-xl font-bold text-black'>Kepala Dusun</p> <img class='gambar-kepala-dusun' src='asset/belum ada foto.png'>"
         );
-
       var semimpen = L.layergroup([posko, kadus]);
 
       function success(position) {
@@ -68,13 +75,17 @@
           map.removeLayer(circle);
         }
 
+        var userIcon = L.icon({
+          iconUrl: "asset/userIcon.png",
+          iconSize: [40, 40],
+        });
+
         // Add marker and circle
-        marker = L.marker([latitude, longitude])
+        marker = L.marker([latitude, longitude], { icon: userIcon })
           .addTo(map)
           .bindPopup(
             "<p class='text-xl font-bold text-[#dc2626]'>Lokasi anda sekarang</p>"
           );
-
         circle = L.circle([latitude, longitude], { radius: accuracy }).addTo(
           map
         );
@@ -86,6 +97,28 @@
 
         // Set map view to current location
         map.setView([latitude, longitude]);
+
+        map.on("click", function (e) {
+          console.log(e);
+          var newMarker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
+          L.Routing.control({
+            waypoints: [
+              L.latLng(latitude, longitude),
+              L.latLng(e.latlng.lat, e.latlng.lng),
+            ],
+          })
+            .on("routesfound", function (e) {
+              var routes = e.routes;
+              console.log(routes);
+
+              e.routes[0].coordinates.forEach(function (coord, index) {
+                setTimeout(function () {
+                  marker.setLatLng([coord.lat, coord.lng]);
+                }, 100 * index);
+              });
+            })
+            .addTo(map);
+        });
       }
 
       function error(error) {
