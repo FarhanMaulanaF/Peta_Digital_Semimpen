@@ -44,12 +44,12 @@
       var posko = L.marker([-7.46431, 110.36294])
         .addTo(map)
         .bindPopup(
-          "<p class='text-xl font-bold text-black'>Pos Keamanan</b> <br/> <img class='h-auto' src=''>"
+          "<p class='text-xl font-bold text-black'>Pos Keamanan</p> <br/> <img class='h-auto' src=''>"
         );
-      var kadus = L.marker([-7.4642, 110.36337])
+      var kadus = L.marker([-7.46416, 110.36342])
         .addTo(map)
         .bindPopup(
-          "<p class='text-xl font-bold text-black'>Kepala Dusun</b> <br/> <img class='gambar-kepala-dusun' src=''>"
+          "<p class='text-xl font-bold text-black'>Kepala Dusun</p> <br/> <img class='gambar-kepala-dusun' src='asset/rumah pak kadus.png'>"
         );
 
       var semimpen = L.layergroup([posko, kadus]);
@@ -72,10 +72,12 @@
         marker = L.marker([latitude, longitude])
           .addTo(map)
           .bindPopup(
-            "<p class='text-xl font-bold text-primary'>Lokasi anda sekarang</p>"
+            "<p class='text-xl font-bold text-[#dc2626]'>Lokasi anda sekarang</p> <img class='gambar-kepala-dusun' src='asset/rumah pak kadus.png'>"
           );
 
-        circle = L.circle([latitude, longitude], { radius: accuracy }).addTo(map);
+        circle = L.circle([latitude, longitude], { radius: accuracy }).addTo(
+          map
+        );
 
         // Zoom map to fit marker and circle
         if (!zoomed) {
@@ -96,5 +98,4 @@
       }
     </script>
   </body>
-
 </html>
