@@ -97,7 +97,6 @@
 
         // Set map view to current location
         map.setView([latitude, longitude]);
-
         map.on("click", function (e) {
           console.log(e);
           var newMarker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
@@ -129,6 +128,7 @@
           alert("Tidak bisa mendapatkan lokasi saat ini!");
         }
       }
+
     </script>
   </body>
 </html>
