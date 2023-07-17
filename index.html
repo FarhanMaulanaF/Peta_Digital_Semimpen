@@ -65,8 +65,14 @@
         }
 
         var userIcon = L.icon({
-          iconUrl: "asset/userIcon.png",          
+          iconUrl: "asset/userIcon.png", 
+          shadowUrl: "asset/userIconShadow.png", 
+
           iconSize: [40, 40],
+          shadowSize: [40, 40],
+          iconAnchor: [0, 0],
+          shadowAnchor: [-15, 0],
+          popupAnchor: [0, -40],
         });
 
         // Add marker and circle
