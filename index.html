@@ -29,7 +29,7 @@
     <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
 
     <script>
-      var map = L.map("map");
+      const map = L.map("map");
       map.setView([-7.46418, 110.36278], 17);
       L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',}).addTo(map);
 
@@ -53,11 +53,9 @@
       var semimpen = L.layergroup([posko, kadus]);
 
       function success(position) {
-        // Get current latitude and longitude
+        // Get current latitude, longitude, accuracy 
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
-
-        // Get current accuracy
         const accuracy = position.coords.accuracy;
 
         // Remove previous marker and circle
@@ -77,9 +75,7 @@
           .bindPopup(
             "<p class='text-xl font-bold text-[#dc2626]'>Lokasi anda sekarang</p>"
           );
-        circle = L.circle([latitude, longitude], { radius: accuracy }).addTo(
-          map
-        );
+        circle = L.circle([latitude, longitude], { radius: accuracy }).addTo(map);
 
         // Zoom map to fit marker and circle
         if (!zoomed) {
@@ -119,7 +115,6 @@
           alert("Tidak bisa mendapatkan lokasi saat ini!");
         }
       }
-
     </script>
   </body>
 </html>
