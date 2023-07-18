@@ -1,6 +1,6 @@
-const map = L.map("map");
+var map = L.map("map");
 map.setView([-7.46418, 110.36278], 17);
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',}).addTo(map);
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | KKN UGM 2023',}).addTo(map);
 
 // Track user location
 navigator.geolocation.watchPosition(success, error);
@@ -69,10 +69,10 @@ map.on("click", function (e) {
 }
 
 function error(error) {
-// Handle geolocation error
-if (error.code === 1) {
-    alert("Izinkan akses geolokasi!");
-} else {
-    alert("Tidak bisa mendapatkan lokasi saat ini!");
-}
+    // Handle geolocation error
+    if (error.code === 1) {
+        alert("Izinkan akses geolokasi!");
+    } else {
+        alert("Tidak bisa mendapatkan lokasi saat ini!");
+    }
 }
