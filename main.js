@@ -57,7 +57,7 @@ function success(position) {
         .on("routesfound", function (e) {
             var routes = e.routes;
             console.log(routes);
-
+            
             e.routes[0].coordinates.forEach(function (coord, index) {
                 setTimeout(function () {
                     marker.setLatLng([coord.lat, coord.lng]);
@@ -76,3 +76,4 @@ function error(error) {
         alert("Tidak bisa mendapatkan lokasi saat ini!");
     }
 }
+
