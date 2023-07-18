@@ -631,14 +631,6 @@ video {
   position: sticky;
 }
 
-.-inset-1 {
-  inset: -0.25rem;
-}
-
-.end-1 {
-  inset-inline-end: 0.25rem;
-}
-
 .isolate {
   isolation: isolate;
 }
@@ -673,10 +665,6 @@ video {
 
 .clear-none {
   clear: none;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
 }
 
 .box-border {
@@ -1288,12 +1276,6 @@ video {
 
 .justify-items-stretch {
   justify-items: stretch;
-}
-
-.space-x-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-y-reverse > :not([hidden]) ~ :not([hidden]) {
