@@ -14,58 +14,58 @@ var kadus = L.marker([-7.46416, 110.36342]).addTo(map).bindPopup("<p class='text
 var semimpen = L.layergroup([posko, kadus]);
 
 function success(position) {
-// Get current latitude, longitude, accuracy 
-const latitude = position.coords.latitude;
-const longitude = position.coords.longitude;
-const accuracy = position.coords.accuracy;
+    // Get current latitude, longitude, accuracy 
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    const accuracy = position.coords.accuracy;
 
-// Remove previous marker and circle
-if (marker) {
-    map.removeLayer(marker);
-    map.removeLayer(circle);
-}
+    // Remove previous marker and circle
+    if (marker) {
+        map.removeLayer(marker);
+        map.removeLayer(circle);
+    }
 
-var userIcon = L.icon({
-    iconUrl: "asset/userIcon.png", 
-    shadowUrl: "asset/userIconShadow.png", 
+    var userIcon = L.icon({
+        iconUrl: "asset/userIcon.png", 
+        shadowUrl: "asset/userIconShadow.png", 
 
-    iconSize: [40, 40],
-    shadowSize: [40, 40],
-    shadowAnchor: [7, 20],
-});
+        iconSize: [40, 40],
+        shadowSize: [40, 40],
+        shadowAnchor: [7, 20],
+    });
 
-// Add marker and circle
-marker = L.marker([latitude, longitude], { icon: userIcon }).addTo(map).bindPopup("<p class='text-xl font-bold text-[#dc2626]'>Lokasi anda sekarang</p>");
-circle = L.circle([latitude, longitude], { radius: accuracy }).addTo(map);
+    // Add marker and circle
+    marker = L.marker([latitude, longitude], { icon: userIcon }).addTo(map).bindPopup("<p class='text-xl font-bold text-[#dc2626]'>Lokasi anda sekarang</p>");
+    circle = L.circle([latitude, longitude], { radius: accuracy }).addTo(map);
 
-// Zoom map to fit marker and circle
-if (!zoomed) {
-    zoomed = map.fitBounds(circle.getBounds());
-}
+    // Zoom map to fit marker and circle
+    if (!zoomed) {
+        zoomed = map.fitBounds(circle.getBounds());
+    }
 
-// Set map view to current location
-map.setView([latitude, longitude]);
-map.on("click", function (e) {
-    console.log(e);
-    var newMarker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
-    L.Routing.control({
-    waypoints: [
-        L.latLng(latitude, longitude),
-        L.latLng(e.latlng.lat, e.latlng.lng),
-    ],
-    })
-    .on("routesfound", function (e) {
-        var routes = e.routes;
-        console.log(routes);
+    // Set map view to current location
+    map.setView([latitude, longitude]);
+    map.on("click", function (e) {
+        console.log(e);
+        var newMarker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
+        L.Routing.control({
+            waypoints: [
+                L.latLng(latitude, longitude),
+                L.latLng(e.latlng.lat, e.latlng.lng),
+            ],
+        })
+        .on("routesfound", function (e) {
+            var routes = e.routes;
+            console.log(routes);
 
-        e.routes[0].coordinates.forEach(function (coord, index) {
-        setTimeout(function () {
-            marker.setLatLng([coord.lat, coord.lng]);
-        }, 100 * index);
-        });
-    })
-    .addTo(map);
-});
+            e.routes[0].coordinates.forEach(function (coord, index) {
+                setTimeout(function () {
+                    marker.setLatLng([coord.lat, coord.lng]);
+                }, 100 * index);
+            });
+        })
+        .addTo(map);
+    });
 }
 
 function error(error) {
