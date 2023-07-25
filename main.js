@@ -46,27 +46,27 @@ function success(position) {
 
     // Set map view to current location
     map.setView([latitude, longitude]);
-    map.on("click", function (e) {
-        console.log(e);
-        var newMarker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
-        L.Routing.control({
-            waypoints: [
-                L.latLng(latitude, longitude),
-                L.latLng(e.latlng.lat, e.latlng.lng),
-            ],
-        })
-        .on("routesfound", function (e) {
-            var routes = e.routes;
-            console.log(routes);
+    // map.on("click", function (e) {
+    //     console.log(e);
+    //     var newMarker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
+    //     L.Routing.control({
+    //         waypoints: [
+    //             L.latLng(latitude, longitude),
+    //             L.latLng(e.latlng.lat, e.latlng.lng),
+    //         ],
+    //     })
+    //     .on("routesfound", function (e) {
+    //         var routes = e.routes;
+    //         console.log(routes);
             
-            e.routes[0].coordinates.forEach(function (coord, index) {
-                setTimeout(function () {
-                    marker.setLatLng([coord.lat, coord.lng]);
-                }, 100 * index);
-            });
-        })
-        .addTo(map);
-    });
+    //         e.routes[0].coordinates.forEach(function (coord, index) {
+    //             setTimeout(function () {
+    //                 marker.setLatLng([coord.lat, coord.lng]);
+    //             }, 100 * index);
+    //         });
+    //     })
+    //     .addTo(map);
+    // });
 }
 
 function error(error) {
