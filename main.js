@@ -79,7 +79,7 @@ function error(error) {
 }
 
 // Create layer group for custom markers (Posko and Kadus)
-var posko = L.marker([-7.46431, 110.36294], { icon: houseIcon }).bindPopup("<p class='text-xl font-bold text-black'>Pos Keamanan</p> <img class='gambar-pos-keamanan' src='asset/belum ada foto.png'>");
+var posko = L.marker([-7.46425, 110.36299], { icon: houseIcon }).bindPopup("<p class='text-xl font-bold text-black'>Pos Keamanan</p> <img class='gambar-pos-keamanan' src='asset/belum ada foto.png'>");
 var kadus = L.marker([-7.46416, 110.36342], { icon: houseIcon }).bindPopup("<p class='text-xl font-bold text-black'>Kepala Dusun</p> <img class='gambar-kepala-dusun' src='asset/belum ada foto.png'>");
 var pejabatDaerah = L.layerGroup([posko, kadus]);
 
