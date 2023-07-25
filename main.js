@@ -84,7 +84,7 @@ function error(error) {
 // Create layer group for custom markers (Posko and Kadus)
 var posko = L.marker([-7.46425, 110.36299], { icon: houseIcon }).bindPopup("<p class='text-xl font-bold text-black'>Pos Keamanan</p> <img class='gambar-pos-keamanan' src='asset/Pos Kamling.png'>");
 var kadus = L.marker([-7.46416, 110.36342], { icon: houseIcon }).bindPopup("<p class='text-xl font-bold text-black'>Kepala Dusun</p> <img class='gambar-kepala-dusun' src='asset/belum ada foto.png'>");
-var rt01 = L.marker([-7.46429,110.36283], { icon: houseIcon }).bindPopup("<p class='text-xl font-bold text-black'>Rumah Tangga</p> <img class='gambar-rt-01' src='asset/Rumah RT 01.png'>");
+var rt01 = L.marker([-7.46429,110.36283], { icon: houseIcon }).bindPopup("<p class='text-xl font-bold text-black'>Ketua RT 01</p> <img class='gambar-rt-01' src='asset/Rumah RT 01.png'>");
 var pejabatDaerah = L.layerGroup([posko, kadus, rt01]);
 
 // Add layer control
