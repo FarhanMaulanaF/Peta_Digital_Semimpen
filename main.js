@@ -35,7 +35,7 @@ function success(position) {
     });
 
     // Add marker and circle
-    marker = L.marker([latitude, longitude], { icon: userIcon }).addTo(map).bindPopup("<p class='text-xl text-[#f00] font-bold'>Lokasi anda sekarang. Melakukan Pengetesan Hehehehe</p>");
+    marker = L.marker([latitude, longitude], { icon: userIcon }).addTo(map).bindPopup("<p class='text-xl text-[#f00] font-bold'>Lokasi anda sekarang</p>");
     circle = L.circle([latitude, longitude], { radius: accuracy }).addTo(map);
 
     // Zoom map to fit marker and circle
