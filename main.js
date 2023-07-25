@@ -8,6 +8,21 @@ navigator.geolocation.watchPosition(success, error);
 // Initialize variables
 let marker, circle, zoomed;
 
+// Create custom icons
+var userIcon = L.icon({
+    iconUrl: "asset/userIcon.png", 
+    shadowUrl: "asset/userIconShadow.png", 
+
+    iconSize: [40, 40],
+    shadowSize: [40, 40],
+    shadowAnchor: [7, 20],
+}),
+houseIcon = L.icon({
+    iconUrl: "asset/houseIcon.png",
+
+    iconSize: [40, 40],
+});
+
 function success(position) {
     // Get current latitude, longitude, accuracy 
     const latitude = position.coords.latitude;
@@ -19,15 +34,6 @@ function success(position) {
         map.removeLayer(marker);
         map.removeLayer(circle);
     }
-
-    var userIcon = L.icon({
-        iconUrl: "asset/userIcon.png", 
-        shadowUrl: "asset/userIconShadow.png", 
-
-        iconSize: [40, 40],
-        shadowSize: [40, 40],
-        shadowAnchor: [7, 20],
-    });
 
     // Add marker and circle
     marker = L.marker([latitude, longitude], { icon: userIcon }).addTo(map).bindPopup("<p class='text-xl text-[#f00] font-bold'>Lokasi anda sekarang</p>");
@@ -73,8 +79,8 @@ function error(error) {
 }
 
 // Create layer group for custom markers (Posko and Kadus)
-var posko = L.marker([-7.46431, 110.36294]).bindPopup("<p class='text-xl font-bold text-black'>Pos Keamanan</p> <img class='gambar-pos-keamanan' src='asset/belum ada foto.png'>");
-var kadus = L.marker([-7.46416, 110.36342]).bindPopup("<p class='text-xl font-bold text-black'>Kepala Dusun</p> <img class='gambar-kepala-dusun' src='asset/belum ada foto.png'>");
+var posko = L.marker([-7.46431, 110.36294], { icon: houseIcon }).bindPopup("<p class='text-xl font-bold text-black'>Pos Keamanan</p> <img class='gambar-pos-keamanan' src='asset/belum ada foto.png'>");
+var kadus = L.marker([-7.46416, 110.36342], { icon: houseIcon }).bindPopup("<p class='text-xl font-bold text-black'>Kepala Dusun</p> <img class='gambar-kepala-dusun' src='asset/belum ada foto.png'>");
 var pejabatDaerah = L.layerGroup([posko, kadus]);
 
 // Add layer control
