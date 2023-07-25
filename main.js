@@ -1,6 +1,6 @@
 var map = L.map("map");
 map.setView([-7.46418, 110.36278], 17);
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | KKN UGM 2023',}).addTo(map);
+var OpenStreetMap = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | KKN UGM 2023',}).addTo(map);
 
 // Track user location
 navigator.geolocation.watchPosition(success, error);
@@ -79,10 +79,7 @@ var pejabatDaerah = L.layerGroup([posko, kadus]);
 
 // Add layer control
 var baseLayers = {
-    "OpenStreetMap": L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | KKN UGM 2023',
-    }),
+    "Peta Biasa" : OpenStreetMap,
 };
 
 var overlayLayers = {
