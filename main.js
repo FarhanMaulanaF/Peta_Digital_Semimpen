@@ -8,11 +8,6 @@ navigator.geolocation.watchPosition(success, error);
 // Initialize variables
 let marker, circle, zoomed;
 
-// Add marker to map
-var posko = L.marker([-7.46431, 110.36294]).addTo(map).bindPopup("<p class='text-xl font-bold text-black'>Pos Keamanan</p> <img class='gambar-pos-keamanan' src='asset/belum ada foto.png'>");
-var kadus = L.marker([-7.46416, 110.36342]).addTo(map).bindPopup("<p class='text-xl font-bold text-black'>Kepala Dusun</p> <img class='gambar-kepala-dusun' src='asset/belum ada foto.png'>");
-var semimpen = L.layergroup([posko, kadus]);
-
 function success(position) {
     // Get current latitude, longitude, accuracy 
     const latitude = position.coords.latitude;
@@ -76,4 +71,23 @@ function error(error) {
         alert("Tidak bisa mendapatkan lokasi saat ini!");
     }
 }
+
+// Create layer group for custom markers (Posko and Kadus)
+var posko = L.marker([-7.46431, 110.36294]).bindPopup("<p class='text-xl font-bold text-black'>Pos Keamanan</p> <img class='gambar-pos-keamanan' src='asset/belum ada foto.png'>");
+var kadus = L.marker([-7.46416, 110.36342]).bindPopup("<p class='text-xl font-bold text-black'>Kepala Dusun</p> <img class='gambar-kepala-dusun' src='asset/belum ada foto.png'>");
+var pejabatDaerah = L.layerGroup([posko, kadus]);
+
+// Add layer control
+var baseLayers = {
+    "OpenStreetMap": L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | KKN UGM 2023',
+    }),
+};
+
+var overlayLayers = {
+    "Pejabat Daerah": pejabatDaerah,
+};
+
+L.control.layers(baseLayers, overlayLayers).addTo(map);
 
