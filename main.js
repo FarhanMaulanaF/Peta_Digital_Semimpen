@@ -19,8 +19,11 @@ var userIcon = L.icon({
 }),
 houseIcon = L.icon({
     iconUrl: "asset/houseIcon.png",
+    shadowUrl: "asset/houseShadow.png",
 
     iconSize: [40, 40],
+    shadowSize: [40, 40],
+    shadowAnchor: [7, 20],
 });
 
 function success(position) {
