@@ -85,7 +85,9 @@ function error(error) {
 var posko = L.marker([-7.46425, 110.36299], { icon: houseIcon }).bindPopup("<p class='text-xl font-bold text-black'>Pos Keamanan</p><img class='gambar-pos-keamanan scale-100' src='asset/Pos Kamling.png'>");
 var kadus = L.marker([-7.46416, 110.36342], { icon: houseIcon }).bindPopup("<p class='text-xl font-bold text-black'>Kepala Dusun</p> <img class='gambar-kepala-dusun scale-100' src='asset/belum ada foto.png'>");
 var rt01 = L.marker([-7.46429,110.36283], { icon: houseIcon }).bindPopup("<p class='text-xl font-bold text-black'>Ketua RT 01</p> <img class='gambar-rt-01 scale-100' src='asset/Rumah RT 01.png'>");
-var pejabatDaerah = L.layerGroup([posko, kadus, rt01]);
+
+var pejabatDaerah = L.layerGroup([kadus, rt01]);
+var fasilitasUmum = L.layerGroup([posko]);
 
 // Add layer control
 var baseLayers = {
@@ -94,6 +96,7 @@ var baseLayers = {
 
 var overlayLayers = {
     "Pejabat Daerah": pejabatDaerah,
+    "Fasilitas Umum": fasilitasUmum,
 };
 
 L.control.layers(baseLayers, overlayLayers).addTo(map);
