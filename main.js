@@ -47,12 +47,16 @@ popupKades.innerHTML = `
 </div>
 `;
 popupRT1.innerHTML = `
+<div>
     <p class='text-xl font-bold text-black'>Ketua RT 1</p> 
     <img class='gambar-rt-01 w-300 h-auto' src='asset/Rumah RT 01.png'>
+</div>
 `;
 popupPosKeamanan.innerHTML = `
+<div>
     <p class='text-xl font-bold text-black'>Pos Keamanan</p>
     <img class='gambar-pos-keamanan w- h-auto' src='asset/Pos Kamling.png'>
+</div>
 `;
 
 // Get current location
