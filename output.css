@@ -534,10 +534,6 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.flex {
-  display: flex;
-}
-
 .scale-100 {
   --tw-scale-x: 1;
   --tw-scale-y: 1;
