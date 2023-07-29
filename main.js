@@ -1,6 +1,6 @@
 var map = L.map("map");
 map.setView([-7.46418, 110.36278], 17);
-var OpenStreetMap = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | KKN UGM 2023',}).addTo(map);
+var OpenStreetMap = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 19, attribution: '<a href="https://kkn.ugm.ac.id/"> KKN UGM 2023 </a>',}).addTo(map);
 
 // Track user location
 navigator.geolocation.watchPosition(success, error);
@@ -24,7 +24,16 @@ houseIcon = L.icon({
     iconSize: [40, 40],
     shadowSize: [40, 40],
     shadowAnchor: [7, 20],
-});
+}),
+buildingIcon = L.icon({
+    iconUrl: "asset/buildingIcon.png",
+    shadowUrl: "asset/buildingIconShadow.png",
+
+    iconSize: [30, 30],
+    shadowSize: [30, 30],
+    shadowAnchor: [5, 15],
+})
+;
 
 function success(position) {
     // Get current latitude, longitude, accuracy 
@@ -82,7 +91,7 @@ function error(error) {
 }
 
 // Create layer group for custom markers (Posko and Kadus)
-var posko = L.marker([-7.46425, 110.36299], { icon: houseIcon }).bindPopup("<p class='text-xl font-bold text-black'>Pos Keamanan</p><img class='gambar-pos-keamanan scale-100' src='asset/Pos Kamling.png'>");
+var posko = L.marker([-7.46425, 110.36299], { icon: buildingIcon }).bindPopup("<p class='text-xl font-bold text-black'>Pos Keamanan</p><img class='gambar-pos-keamanan scale-100' src='asset/Pos Kamling.png'>");
 var kadus = L.marker([-7.46416, 110.36342], { icon: houseIcon }).bindPopup("<p class='text-xl font-bold text-black'>Kepala Dusun</p> <img class='gambar-kepala-dusun scale-100' src='asset/belum ada foto.png'>");
 var rt01 = L.marker([-7.46429,110.36283], { icon: houseIcon }).bindPopup("<p class='text-xl font-bold text-black'>Ketua RT 01</p> <img class='gambar-rt-01 scale-100' src='asset/Rumah RT 01.png'>");
 
@@ -95,8 +104,8 @@ var baseLayers = {
 };
 
 var overlayLayers = {
-    "Pejabat Daerah": pejabatDaerah,
     "Fasilitas Umum": fasilitasUmum,
+    "Pejabat Daerah": pejabatDaerah,
 };
 
 L.control.layers(baseLayers, overlayLayers).addTo(map);
