@@ -35,6 +35,7 @@ buildingIcon = L.icon({
 })
 ;
 
+// Get current location
 function success(position) {
     // Get current latitude, longitude, accuracy 
     const latitude = position.coords.latitude;
@@ -90,10 +91,11 @@ function error(error) {
     }
 }
 
-// Create layer group for custom markers (Posko and Kadus)
-var posko = L.marker([-7.46425, 110.36299], { icon: buildingIcon }).bindPopup("<p class='text-xl font-bold text-black'>Kepala Dusun</p><img class='gambar-pos-keamanan scale-100' src='asset/Pos Kamling.png'>");
+// Create layer group for custom markers
 var kadus = L.marker([-7.46416, 110.36342], { icon: houseIcon }).bindPopup("<p class='text-xl font-bold text-black'>Kepala Dusun</p> <img class='gambar-kepala-dusun scale-100' src='asset/belum ada foto.png'>");
 var rt01 = L.marker([-7.46429,110.36283], { icon: houseIcon }).bindPopup("<p class='text-xl font-bold text-black'>Kepala Dusun</p> <img class='gambar-rt-01 scale-100' src='asset/Rumah RT 01.png'>");
+
+var posko = L.marker([-7.46425, 110.36299], { icon: buildingIcon }).bindPopup("<p class='text-xl font-bold text-black'>Kepala Dusun</p><img class='gambar-pos-keamanan scale-100' src='asset/Pos Kamling.png'>");
 
 var pejabatDaerah = L.layerGroup([kadus, rt01]);
 var fasilitasUmum = L.layerGroup([posko]);
