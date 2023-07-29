@@ -35,6 +35,12 @@ buildingIcon = L.icon({
 })
 ;
 
+const popupKades = document.createElement('div');
+popupKades.innerHTML = `
+    <p class='text-xl font-bold text-black'>Kepala Dusun</p> 
+    <img class='gambar-kepala-dusun w-300 h-auto' src='asset/belum ada foto.png'>
+`;
+
 // Get current location
 function success(position) {
     // Get current latitude, longitude, accuracy 
@@ -92,10 +98,9 @@ function error(error) {
 }
 
 // Create layer group for custom markers
-var kadus = L.marker([-7.46416, 110.36342], { icon: houseIcon }).bindPopup("<p class='text-xl font-bold text-black'>Kepala Dusun</p> <img class='gambar-kepala-dusun scale-100' src='asset/belum ada foto.png'>");
-var rt1 = L.marker([-7.46429,110.36283], { icon: houseIcon }).bindPopup("<p class='text-xl font-bold text-black'>Ketua RT 1</p> <img class='gambar-rt-01 scale-100' src='asset/Rumah RT 01.png'>");
-
-var posKeamanan = L.marker([-7.46425, 110.36299], { icon: buildingIcon }).bindPopup("<p class='text-xl font-bold text-black'>Pos Keamanan</p><img class='gambar-pos-keamanan scale-100' src='asset/Pos Kamling.png'>");
+var kadus = L.marker([-7.46416, 110.36342], { icon: houseIcon }).bindPopup(popupKades);
+var rt1 = L.marker([-7.46429,110.36283], { icon: houseIcon }).bindPopup("<p class='text-xl font-bold text-black'>Ketua RT 1</p> <img class='gambar-rt-01 w-300 h-auto' src='asset/Rumah RT 01.png'>");
+var posKeamanan = L.marker([-7.46425, 110.36299], { icon: buildingIcon }).bindPopup("<p class='text-xl font-bold text-black'>Pos Keamanan</p><img class='gambar-pos-keamanan w- h-auto' src='asset/Pos Kamling.png'>");
 
 var pejabatDaerah = L.layerGroup([kadus, rt1]);
 var fasilitasUmum = L.layerGroup([posKeamanan]);
