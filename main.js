@@ -47,12 +47,15 @@ buildingIcon = L.icon({
 ;
 
 // Create popup
-const popupKades = document.createElement('div');
+const popupKadus = document.createElement('div');
 const popupRT1 = document.createElement('div');
+const popupRT2 = document.createElement('div');
+const popupRT3 = document.createElement('div');
+const popupRT4 = document.createElement('div');
 const popupPenasehat = document.createElement('div');
-const popupPosKeamanan = document.createElement('div');
+const popupPosKamling = document.createElement('div');
 
-popupKades.innerHTML = `
+popupKadus.innerHTML = `
 <div class='grid justify-items-center text-center w-48'>
     <div>
         <p class='text-xl font-bold text-black font-Poppins'>"Bapak Suwoto"</p> 
@@ -66,11 +69,44 @@ popupKades.innerHTML = `
 popupRT1.innerHTML = `
 <div class='grid justify-items-center text-center w-48'>
     <div>
-        <p class='text-xl font-bold text-black font-Poppins'>"Bapak Sumad"</p> 
+        <p class='text-xl font-bold text-black font-Poppins'>"Bapak Midi"</p> 
         <p class='text-base font-Poppins font-light'>Ketua RT 1</p>
     </div>
     <div>
-        <img class='gambar-rt-01 w-300 h-auto' src='asset/Rumah RT 01.png'>
+        <img class='gambar-rt-1 w-300 h-auto' src='asset/belum ada foto.png'>
+    </div>
+</div>
+`;
+popupRT2.innerHTML = `
+<div class='grid justify-items-center text-center w-48'>
+    <div>
+        <p class='text-xl font-bold text-black font-Poppins'>"Bapak Sumad"</p> 
+        <p class='text-base font-Poppins font-light'>Ketua RT 2</p>
+    </div>
+    <div>
+        <img class='gambar-rt-2 w-300 h-auto' src='asset/Rumah RT 02.png'>
+    </div>
+</div>
+`;
+popupRT3.innerHTML = `
+<div class='grid justify-items-center text-center w-48'>
+    <div>
+        <p class='text-xl font-bold text-black font-Poppins'>"Bapak Sarojo"</p> 
+        <p class='text-base font-Poppins font-light'>Ketua RT 3</p>
+    </div>
+    <div>
+        <img class='gambar-rt-3 w-300 h-auto' src='asset/belum ada foto.png'>
+    </div>
+</div>
+`;
+popupRT4.innerHTML = `
+<div class='grid justify-items-center text-center w-48'>
+    <div>
+        <p class='text-xl font-bold text-black font-Poppins'>"Bapak Dermo"</p> 
+        <p class='text-base font-Poppins font-light'>Ketua RT 4</p>
+    </div>
+    <div>
+        <img class='gambar-rt-4 w-300 h-auto' src='asset/belum ada foto.png'>
     </div>
 </div>
 `;
@@ -85,13 +121,13 @@ popupPenasehat.innerHTML = `
     </div>
 </div>
 `;
-popupPosKeamanan.innerHTML = `
+popupPosKamling.innerHTML = `
 <div class='grid justify-items-center text-center w-48'>
     <div>
-        <p class='text-xl font-bold text-black font-Poppins'>Pos Keamanan</p>
+        <p class='text-xl font-bold text-black font-Poppins'>Pos Kamling</p>
     </div>
     <div>
-        <img class='gambar-pos-keamanan w- h-auto' src='asset/Pos Kamling.png'>
+        <img class='gambar-pos-kamling w- h-auto' src='asset/Pos Kamling.png'>
     </div>
 </div>
 `;
@@ -153,13 +189,16 @@ function error(error) {
 }
 
 // Create layer group for custom markers
-var kadus = L.marker([-7.46416, 110.36342], { icon: houseIcon }).bindPopup(popupKades);
-var rt1 = L.marker([-7.46429,110.36283], { icon: houseIcon }).bindPopup(popupRT1);
-var posKeamanan = L.marker([-7.46425, 110.36299], { icon: buildingIcon }).bindPopup(popupPosKeamanan);
+var kadus = L.marker([-7.46416, 110.36342], { icon: houseIcon }).bindPopup(popupKadus);
+var rt1 = L.marker([-7.4645016, 110.3637053], { icon: houseIcon }).bindPopup(popupRT1);
+var rt2 = L.marker([-7.46429,110.36283], { icon: houseIcon }).bindPopup(popupRT2);
+var rt3 = L.marker([-7.4635515, 110.3637231], { icon: houseIcon }).bindPopup(popupRT3);
+var rt4 = L.marker([-7.4633355, 110.3642056], { icon: houseIcon }).bindPopup(popupRT4); 
+var posKamling = L.marker([-7.46425, 110.36299], { icon: buildingIcon }).bindPopup(popupPosKamling);
 var penasehat = L.marker([-7.46476, 110.36316], { icon: houseIcon }).bindPopup(popupPenasehat);
 
-var pejabatDaerah = L.layerGroup([kadus, rt1, penasehat]);
-var fasilitasUmum = L.layerGroup([posKeamanan]);
+var pejabatDaerah = L.layerGroup([kadus, rt1, rt2, rt3, rt4, penasehat]);
+var fasilitasUmum = L.layerGroup([posKamling]);
 
 // Add layer control
 var baseLayers = {
