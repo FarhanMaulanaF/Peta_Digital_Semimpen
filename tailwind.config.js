@@ -5,6 +5,9 @@ module.exports = {
     'index.html'
   ],
   theme: {
+    fontFamily: {
+      Poppins : ['Poppins', 'sans-serif'],
+    },
     colors: {
       'primary': '#9333ea',
     },
