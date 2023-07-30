@@ -657,6 +657,10 @@ video {
   --tw-bg-opacity: 0.75;
 }
 
+.p-0{
+  padding: 0px;
+}
+
 .text-center{
   text-align: center;
 }
