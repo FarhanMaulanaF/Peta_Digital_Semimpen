@@ -41,7 +41,7 @@ const popupRT1 = document.createElement('div');
 const popupPosKeamanan = document.createElement('div');
 
 popupKades.innerHTML = `
-<div class='grid justify-items-center text-center w-60'>
+<div class='grid justify-items-center text-center w-48'>
     <div>
         <p class='text-xl font-bold text-black text-center'>Kepala Dusun</p> 
     </div>
@@ -51,7 +51,7 @@ popupKades.innerHTML = `
 </div>
 `;
 popupRT1.innerHTML = `
-<div class='grid justify-items-center text-center w-60'>
+<div class='grid justify-items-center text-center w-48'>
     <div>
         <p class='text-xl font-bold text-black'>Ketua RT 1</p> 
     </div>
@@ -61,7 +61,7 @@ popupRT1.innerHTML = `
 </div>
 `;
 popupPosKeamanan.innerHTML = `
-<div class='grid justify-items-center text-center w-60'>
+<div class='grid justify-items-center text-center w-48'>
     <div>
         <p class='text-xl font-bold text-black'>Pos Keamanan</p>
     </div>
