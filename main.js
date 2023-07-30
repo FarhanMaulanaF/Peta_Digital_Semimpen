@@ -1,13 +1,10 @@
-// Cari elemen loader
 var loader = document.querySelector(".loader");
-// Buat fungsi untuk menyembunyikan loader setelah 2 detik
 function hideLoader() {
-  loader.style.display = "none";
+    loader.classList.add("disappear"); 
 }
 
-// Setelah window diload, tambahkan jeda 2 detik sebelum menyembunyikan loader
 window.addEventListener("load", function () {
-  setTimeout(hideLoader, 2000);
+    setTimeout(hideLoader, 2000);
 });
 
 var map = L.map("map");
