@@ -44,6 +44,7 @@ popupKades.innerHTML = `
 <div class='grid justify-items-center text-center w-48'>
     <div>
         <p class='text-xl font-bold text-black font-Poppins'>Kepala Dusun</p> 
+        <p class='text-base font-Poppins font-light'>"Bapak Suwoto"</p>
     </div>
     <div>
         <img class='gambar-kepala-dusun w-300 h-auto' src='asset/Rumah Kadus.png'>
@@ -54,6 +55,7 @@ popupRT1.innerHTML = `
 <div class='grid justify-items-center text-center w-48'>
     <div>
         <p class='text-xl font-bold text-black font-Poppins'>Ketua RT 1</p> 
+        <p class='text-base font-Poppins font-light'>"Bapak Sumad"</p>
     </div>
     <div>
         <img class='gambar-rt-01 w-300 h-auto' src='asset/Rumah RT 01.png'>
