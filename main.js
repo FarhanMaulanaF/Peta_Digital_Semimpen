@@ -195,7 +195,7 @@ var rt2 = L.marker([-7.46429,110.36283], { icon: houseIcon }).bindPopup(popupRT2
 var rt3 = L.marker([-7.4635515, 110.3637231], { icon: houseIcon }).bindPopup(popupRT3);
 var rt4 = L.marker([-7.4633355, 110.3642056], { icon: houseIcon }).bindPopup(popupRT4); 
 var posKamling = L.marker([-7.46425, 110.36299], { icon: buildingIcon }).bindPopup(popupPosKamling);
-var penasehat = L.marker([-7.46476, 110.36316], { icon: houseIcon }).bindPopup(popupPenasehat);
+var penasehat = L.marker([-7.4646409, 110.3630683], { icon: houseIcon }).bindPopup(popupPenasehat);
 
 var pejabatDaerah = L.layerGroup([kadus, rt1, rt2, rt3, rt4, penasehat]);
 var fasilitasUmum = L.layerGroup([posKamling]);
