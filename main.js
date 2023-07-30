@@ -1,14 +1,11 @@
-// Cari elemen loader
 var loader = document.querySelector(".loader");
-
-// Tampilkan loader saat halaman dimuat
 loader.style.display = "block";
 
-// Setelah window diload, tambahkan jeda 2 detik sebelum menyembunyikan loader
 window.addEventListener("load", function () {
-setTimeout(function () {
-    loader.style.display = "none";
-}, 2000);
+    setTimeout(function () 
+    {
+        loader.style.display = "none";
+    }, 2000);
 });
 
 
@@ -52,13 +49,14 @@ buildingIcon = L.icon({
 // Create popup
 const popupKades = document.createElement('div');
 const popupRT1 = document.createElement('div');
+const popupPenasehat = document.createElement('div');
 const popupPosKeamanan = document.createElement('div');
 
 popupKades.innerHTML = `
 <div class='grid justify-items-center text-center w-48'>
     <div>
-        <p class='text-xl font-bold text-black font-Poppins'>Kepala Dusun</p> 
-        <p class='text-base font-Poppins font-light'>"Bapak Suwoto"</p>
+        <p class='text-xl font-bold text-black font-Poppins'>"Bapak Suwoto"</p> 
+        <p class='text-base font-Poppins font-light'>Kepala Dusun</p>
     </div>
     <div>
         <img class='gambar-kepala-dusun w-300 h-auto' src='asset/Rumah Kadus.png'>
@@ -68,11 +66,22 @@ popupKades.innerHTML = `
 popupRT1.innerHTML = `
 <div class='grid justify-items-center text-center w-48'>
     <div>
-        <p class='text-xl font-bold text-black font-Poppins'>Ketua RT 1</p> 
-        <p class='text-base font-Poppins font-light'>"Bapak Sumad"</p>
+        <p class='text-xl font-bold text-black font-Poppins'>"Bapak Sumad"</p> 
+        <p class='text-base font-Poppins font-light'>Ketua RT 1</p>
     </div>
     <div>
         <img class='gambar-rt-01 w-300 h-auto' src='asset/Rumah RT 01.png'>
+    </div>
+</div>
+`;
+popupPenasehat.innerHTML = `
+<div class='grid justify-items-center text-center w-48'>
+    <div>
+        <p class='text-xl font-bold text-black font-Poppins'>"Bapak Wardi"</p> 
+        <p class='text-base font-Poppins font-light'>Penasehat Karang Taruna</p>
+    </div>
+    <div>
+        <img class='gambar-penasehat-karang-taruna w-300 h-auto' src='asset/belum ada foto.png'>
     </div>
 </div>
 `;
@@ -147,8 +156,9 @@ function error(error) {
 var kadus = L.marker([-7.46416, 110.36342], { icon: houseIcon }).bindPopup(popupKades);
 var rt1 = L.marker([-7.46429,110.36283], { icon: houseIcon }).bindPopup(popupRT1);
 var posKeamanan = L.marker([-7.46425, 110.36299], { icon: buildingIcon }).bindPopup(popupPosKeamanan);
+var penasehat = L.marker([-7.46476, 110.36316], { icon: houseIcon }).bindPopup(popupPenasehat);
 
-var pejabatDaerah = L.layerGroup([kadus, rt1]);
+var pejabatDaerah = L.layerGroup([kadus, rt1, penasehat]);
 var fasilitasUmum = L.layerGroup([posKeamanan]);
 
 // Add layer control
