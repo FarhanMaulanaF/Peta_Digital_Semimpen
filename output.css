@@ -536,18 +536,6 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.fixed{
-  position: fixed;
-}
-
-.block{
-  display: block;
-}
-
-.flex{
-  display: flex;
-}
-
 .grid{
   display: grid;
 }
@@ -556,40 +544,12 @@ video {
   height: auto;
 }
 
-.h-screen{
-  height: 100vh;
-}
-
-.w-4\/5{
-  width: 80%;
-}
-
 .w-48{
   width: 12rem;
 }
 
-.w-screen{
-  width: 100vw;
-}
-
-.items-center{
-  align-items: center;
-}
-
-.justify-center{
-  justify-content: center;
-}
-
 .justify-items-center{
   justify-items: center;
-}
-
-.bg-\[\#ffff\]{
-  background-color: #ffff;
-}
-
-.p-0{
-  padding: 0px;
 }
 
 .text-center{
