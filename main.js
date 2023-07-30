@@ -46,7 +46,7 @@ popupKades.innerHTML = `
         <p class='text-xl font-bold text-black text-center'>Kepala Dusun</p> 
     </div>
     <div>
-        <img class='gambar-kepala-dusun w-300 h-auto' src='asset/belum ada foto.png'>
+        <img class='gambar-kepala-dusun w-300 h-auto' src='asset/Rumah Kadus.png'>
     </div>
 </div>
 `;
