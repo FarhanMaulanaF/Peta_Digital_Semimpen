@@ -576,6 +576,10 @@ video {
   height: 100%;
 }
 
+.h-4\/6{
+  height: 66.666667%;
+}
+
 .w-48{
   width: 12rem;
 }
@@ -590,6 +594,30 @@ video {
 
 .w-\[100\%\]{
   width: 100%;
+}
+
+.w-4\/6{
+  width: 66.666667%;
+}
+
+.w-7{
+  width: 1.75rem;
+}
+
+.w-2\/5{
+  width: 40%;
+}
+
+.scale-50{
+  --tw-scale-x: .5;
+  --tw-scale-y: .5;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.scale-0{
+  --tw-scale-x: 0;
+  --tw-scale-y: 0;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .items-center{
