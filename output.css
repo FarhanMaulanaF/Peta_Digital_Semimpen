@@ -552,6 +552,10 @@ video {
   z-index: 50;
 }
 
+.block{
+  display: block;
+}
+
 .flex{
   display: flex;
 }
