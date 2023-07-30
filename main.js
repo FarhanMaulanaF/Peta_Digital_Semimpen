@@ -1,11 +1,16 @@
+// Cari elemen loader
 var loader = document.querySelector(".loader");
-function hideLoader() {
-    loader.classList.add("disappear"); 
-}
 
+// Tampilkan loader saat halaman dimuat
+loader.style.display = "block";
+
+// Setelah window diload, tambahkan jeda 2 detik sebelum menyembunyikan loader
 window.addEventListener("load", function () {
-    setTimeout(hideLoader, 2000);
+setTimeout(function () {
+    loader.style.display = "none";
+}, 2000);
 });
+
 
 var map = L.map("map");
 map.setView([-7.46418, 110.36278], 17);
