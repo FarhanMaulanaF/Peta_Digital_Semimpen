@@ -1,3 +1,10 @@
+var loader = document.querySelector(".loader");
+window.addEventListener("load", vanish);
+
+function vanish() {
+    loader.classList.add("disappear");
+}
+
 var map = L.map("map");
 map.setView([-7.46418, 110.36278], 17);
 var OpenStreetMap = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 19, attribution: '<a href="https://kkn.ugm.ac.id/"> KKN UGM 2023 </a>',}).addTo(map);
