@@ -608,6 +608,10 @@ video {
   width: 40%;
 }
 
+.w-4\/5{
+  width: 80%;
+}
+
 .scale-50{
   --tw-scale-x: .5;
   --tw-scale-y: .5;
