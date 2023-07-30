@@ -1,12 +1,3 @@
-var loader = document.querySelector(".loader");
-loader.style.display = "block";
-
-window.addEventListener("load", function () {
-  setTimeout(function () {
-    loader.style.display = "none";
-  }, 2000);
-});
-
 var map = L.map("map");
 map.setView([-7.46418, 110.36278], 17);
 var OpenStreetMap = L.tileLayer(
@@ -48,6 +39,7 @@ var userIcon = L.icon({
     shadowSize: [30, 30],
     shadowAnchor: [5, 15],
   });
+
 // Create popup
 const popupKadus = document.createElement("div");
 const popupRT1 = document.createElement("div");
