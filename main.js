@@ -43,7 +43,7 @@ const popupPosKeamanan = document.createElement('div');
 popupKades.innerHTML = `
 <div class='grid justify-items-center text-center w-48'>
     <div>
-        <p class='text-xl font-bold text-black text-center'>Kepala Dusun</p> 
+        <p class='text-xl font-bold text-black font-Poppins'>Kepala Dusun</p> 
     </div>
     <div>
         <img class='gambar-kepala-dusun w-300 h-auto' src='asset/Rumah Kadus.png'>
@@ -53,7 +53,7 @@ popupKades.innerHTML = `
 popupRT1.innerHTML = `
 <div class='grid justify-items-center text-center w-48'>
     <div>
-        <p class='text-xl font-bold text-black'>Ketua RT 1</p> 
+        <p class='text-xl font-bold text-black font-Poppins'>Ketua RT 1</p> 
     </div>
     <div>
         <img class='gambar-rt-01 w-300 h-auto' src='asset/Rumah RT 01.png'>
@@ -63,7 +63,7 @@ popupRT1.innerHTML = `
 popupPosKeamanan.innerHTML = `
 <div class='grid justify-items-center text-center w-48'>
     <div>
-        <p class='text-xl font-bold text-black'>Pos Keamanan</p>
+        <p class='text-xl font-bold text-black font-Poppins'>Pos Keamanan</p>
     </div>
     <div>
         <img class='gambar-pos-keamanan w- h-auto' src='asset/Pos Kamling.png'>
@@ -85,7 +85,7 @@ function success(position) {
     }
 
     // Add marker and circle
-    marker = L.marker([latitude, longitude], { icon: userIcon }).addTo(map).bindPopup("<p class='text-xl text-[#f00] font-bold'>Lokasi anda sekarang</p>");
+    marker = L.marker([latitude, longitude], { icon: userIcon }).addTo(map).bindPopup("<p class='text-xl text-[#f00] font-bold text-center font-Poppins'>Lokasi anda sekarang</p>");
     circle = L.circle([latitude, longitude], { radius: accuracy }).addTo(map);
 
     // Zoom map to fit marker and circle
