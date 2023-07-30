@@ -552,6 +552,19 @@ video {
   justify-items: center;
 }
 
+.border-2{
+  border-width: 2px;
+}
+
+.border-solid{
+  border-style: solid;
+}
+
+.border-\[\#000000\]{
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
 .text-center{
   text-align: center;
 }
@@ -586,4 +599,20 @@ video {
 .text-\[\#facc15\]{
   --tw-text-opacity: 1;
   color: rgb(250 204 21 / var(--tw-text-opacity));
+}
+
+.outline-4{
+  outline-width: 4px;
+}
+
+.outline-\[\#0000\]{
+  outline-color: #0000;
+}
+
+.outline-\[\#000\]{
+  outline-color: #000;
+}
+
+.outline-\[\#000000\]{
+  outline-color: #000000;
 }
