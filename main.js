@@ -41,21 +41,33 @@ const popupRT1 = document.createElement('div');
 const popupPosKeamanan = document.createElement('div');
 
 popupKades.innerHTML = `
-<div class='grid justify-items-center'>
-    <p class='text-xl font-bold text-black'>Kepala Dusun</p> 
-    <img class='gambar-kepala-dusun w-300 h-auto' src='asset/belum ada foto.png'>
+<div class='grid justify-items-center text-center w-60'>
+    <div>
+        <p class='text-xl font-bold text-black text-center'>Kepala Dusun</p> 
+    </div>
+    <div>
+        <img class='gambar-kepala-dusun w-300 h-auto' src='asset/belum ada foto.png'>
+    </div>
 </div>
 `;
 popupRT1.innerHTML = `
-<div class='grid justify-items-center'>
-    <p class='text-xl font-bold text-black'>Ketua RT 1</p> 
-    <img class='gambar-rt-01 w-300 h-auto' src='asset/Rumah RT 01.png'>
+<div class='grid justify-items-center text-center w-60'>
+    <div>
+        <p class='text-xl font-bold text-black'>Ketua RT 1</p> 
+    </div>
+    <div>
+        <img class='gambar-rt-01 w-300 h-auto' src='asset/Rumah RT 01.png'>
+    </div>
 </div>
 `;
 popupPosKeamanan.innerHTML = `
-<div class='grid justify-items-center'>
-    <p class='text-xl font-bold text-black'>Pos Keamanan</p>
-    <img class='gambar-pos-keamanan w- h-auto' src='asset/Pos Kamling.png'>
+<div class='grid justify-items-center text-center w-60'>
+    <div>
+        <p class='text-xl font-bold text-black'>Pos Keamanan</p>
+    </div>
+    <div>
+        <img class='gambar-pos-keamanan w- h-auto' src='asset/Pos Kamling.png'>
+    </div>
 </div>
 `;
 
