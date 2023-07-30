@@ -559,6 +559,15 @@ video {
   justify-items: center;
 }
 
+.p-0 {
+  padding: 0px;
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
 .text-center {
   text-align: center;
 }
