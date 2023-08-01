@@ -210,14 +210,12 @@ var penasehat = L.marker([-7.4646, 110.36318], { icon: houseIcon }).bindPopup(
 );
 
 // mencoba embed image
-var imageUrl = "asset/peta.png";
-var errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';
-var altText = 'Image of Newark, N.J. in 1922. Source: The University of Texas at Austin, UT Libraries Map Collection.';
+var rumahWarga = "asset/petaSemimpen.png";
+var altText = 'Peta Rumah Warga Dusun';
 var latLngBounds = L.latLngBounds([[-7.46294,110.36513], [-7.46513,110.36173]]);
 
-var imageOverlay = L.imageOverlay(imageUrl, latLngBounds, {
+var imageOverlay = L.imageOverlay(rumahWarga, latLngBounds, {
     opacity: 0.8,
-    errorOverlayUrl: errorOverlayUrl,
     alt: altText,
     interactive: true
 });
