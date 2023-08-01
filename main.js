@@ -211,11 +211,13 @@ var penasehat = L.marker([-7.4646, 110.36318], { icon: houseIcon }).bindPopup(
 
 // mencoba embed image
 var rumahWarga = "asset/petaSemimpen.png";
+var errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';
 var altText = 'Peta Rumah Warga Dusun';
 var latLngBounds = L.latLngBounds([[-7.46294,110.36513], [-7.46513,110.36173]]);
 
 var imageOverlay = L.imageOverlay(rumahWarga, latLngBounds, {
     opacity: 0.8,
+    errorOverlayUrl: errorOverlayUrl,
     alt: altText,
     interactive: true
 });
