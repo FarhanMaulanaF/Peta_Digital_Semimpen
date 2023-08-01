@@ -232,6 +232,7 @@ var baseLayers = {
 var overlayLayers = {
   "Fasilitas Umum": fasilitasUmum,
   "Pejabat Daerah": pejabatDaerah,
+  "Rumah Warga" : rumahWarga,
 };
 
 L.control.layers(baseLayers, overlayLayers).addTo(map);
