@@ -220,7 +220,7 @@ var imageOverlay = L.imageOverlay(rumahWarga, latLngBounds, {
     errorOverlayUrl: errorOverlayUrl,
     alt: altText,
     interactive: true
-});
+}).addTo(map);
 
 var pejabatDaerah = L.layerGroup([kadus, rt1, rt2, rt3, rt4, penasehat]);
 var fasilitasUmum = L.layerGroup([posKamling]);
