@@ -221,7 +221,8 @@ var imageOverlay = L.imageOverlay(rumahWarga, latLngBounds, {
 });
 
 var pejabatDaerah = L.layerGroup([kadus, rt1, rt2, rt3, rt4, penasehat]);
-var fasilitasUmum = L.layerGroup([posKamling, imageOverlay]);
+var fasilitasUmum = L.layerGroup([posKamling]);
+var rumahWarga = L.layerGroup([imageOverlay]);
 
 // Add layer control
 var baseLayers = {
