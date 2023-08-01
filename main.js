@@ -210,7 +210,7 @@ var penasehat = L.marker([-7.4646, 110.36318], { icon: houseIcon }).bindPopup(
 );
 
 // mencoba embed image
-var rumahWarga = "asset/Peta Semimpen Web-min 11.png";
+var rumahWarga = "asset/petaSemimpenWeb.png";
 var errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';
 var altText = 'Peta Rumah Warga Dusun';
 var latLngBounds = L.latLngBounds([[-7.46294,110.36513], [-7.46513,110.36173]]);
