@@ -67,7 +67,7 @@ popupRT1.innerHTML = `
         <p class='text-base font-Poppins font-light'>Ketua RT 1</p>
     </div>
     <div>
-        <img class='gambar-rt-1 w-300 h-auto' src='asset/belum ada foto.png'>
+        <img class='gambar-rt-1 w-300 h-auto' src='asset/Rumah RT 01.png'>
     </div>
 </div>
 `;
@@ -89,7 +89,7 @@ popupRT3.innerHTML = `
         <p class='text-base font-Poppins font-light'>Ketua RT 3</p>
     </div>
     <div>
-        <img class='gambar-rt-3 w-300 h-auto' src='asset/belum ada foto.png'>
+        <img class='gambar-rt-3 w-300 h-auto' src='asset/Rumah RT 03.png'>
     </div>
 </div>
 `;
@@ -100,7 +100,7 @@ popupRT4.innerHTML = `
         <p class='text-base font-Poppins font-light'>Ketua RT 4</p>
     </div>
     <div>
-        <img class='gambar-rt-4 w-300 h-auto' src='asset/belum ada foto.png'>
+        <img class='gambar-rt-4 w-300 h-auto' src='asset/Rumah RT 04.png'>
     </div>
 </div>
 `;
