@@ -187,27 +187,13 @@ function error(error) {
 }
 
 // Create layer group for custom markers
-var kadus = L.marker([-7.46416, 110.36342], { icon: houseIcon }).bindPopup(
-  popupKadus
-);
-var rt1 = L.marker([-7.4645016, 110.3637053], { icon: houseIcon }).bindPopup(
-  popupRT1
-);
-var rt2 = L.marker([-7.46429, 110.36283], { icon: houseIcon }).bindPopup(
-  popupRT2
-);
-var rt3 = L.marker([-7.4635515, 110.3637231], { icon: houseIcon }).bindPopup(
-  popupRT3
-);
-var rt4 = L.marker([-7.4633355, 110.3642056], { icon: houseIcon }).bindPopup(
-  popupRT4
-);
-var posKamling = L.marker([-7.46425, 110.36299], {
-  icon: buildingIcon,
-}).bindPopup(popupPosKamling);
-var penasehat = L.marker([-7.4646, 110.36318], { icon: houseIcon }).bindPopup(
-  popupPenasehat
-);
+var kadus = L.marker([-7.46416, 110.36342], { icon: houseIcon }).bindPopup( popupKadus );
+var rt1 = L.marker([-7.4645016, 110.3637053], { icon: houseIcon }).bindPopup( popupRT1 );
+var rt2 = L.marker([-7.46429, 110.36283], { icon: houseIcon }).bindPopup( popupRT2 );
+var rt3 = L.marker([-7.4635515, 110.3637231], { icon: houseIcon }).bindPopup( popupRT3 );
+var rt4 = L.marker([-7.4633355, 110.3642056], { icon: houseIcon }).bindPopup( popupRT4);
+var posKamling = L.marker([-7.46425, 110.36299], { icon: buildingIcon }).bindPopup(popupPosKamling);
+var penasehat = L.marker([-7.4646, 110.36318], { icon: houseIcon }).bindPopup( popupPenasehat );
 
 // mencoba embed image
 var rumahWarga = "asset/Peta Semimpen Web Compress.png";
